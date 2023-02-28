@@ -1,5 +1,8 @@
 .App {
-  text-align: center;
+  height: 100vh;
+  width: 100vw;
+  max-width: 100vw;
+  overflow: hidden;
 }
 
 .App-logo {
@@ -14,12 +17,7 @@
 }
 
 .App-header {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  border-bottom: 1px solid #000;
 }
 
 .App-link {
