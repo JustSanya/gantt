@@ -1,8 +1,10 @@
 .wrapper {
-  padding: 20px;
-  text-align: center;
-  width: 20%;
-  border-right: 1px solid black;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  border-bottom: 1px solid black;
 }
 
 .select {
