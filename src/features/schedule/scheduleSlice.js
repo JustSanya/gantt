@@ -38,10 +38,14 @@ export const { updateTimeslot, toggleMode, resetTasks } = scheduleSlice.actions;
 export const selectMode = (state) => state.schedule.mode;
 export const selectTasks = (state) => state.schedule.tasks;
 export const selectDateRange = createSelector([selectTasks], (tasks) => {
-  const minDate = Math.min(...tasks.map(task => new Date(task.start_date).getTime()));
-  const maxDate = Math.max(...tasks.map(task => new Date(task.end_date).getTime()));
+  const minDate = new Date(Math.min(...tasks.map(task => new Date(task.start_date).getTime())));
+  const maxDate = new Date(Math.max(...tasks.map(task => new Date(task.end_date).getTime())));
 
-  return [new Date(minDate), new Date(maxDate)];
+  const rangeStart = new Date(minDate.setDate(minDate.getDate() - 3));
+  const rangeEnd = new Date(maxDate.setDate(maxDate.getDate() + 3));
+  const rangeLength = calculateDuration(rangeStart, rangeEnd);
+
+  return [rangeStart, rangeEnd, rangeLength];
 })
 
 export default scheduleSlice.reducer;

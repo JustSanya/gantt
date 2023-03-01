@@ -1,4 +1,8 @@
 .wrapper {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: flex-end;
   height: 60px;
   border-bottom: 1px solid #000;
+  border-right: 1px solid black;
 }
