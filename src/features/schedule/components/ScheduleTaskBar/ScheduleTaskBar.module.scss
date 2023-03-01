@@ -15,3 +15,20 @@
   color: lightgrey;
   cursor: default;
 }
+
+.border {
+  position: absolute;
+  width: 3px;
+  height: 100%;
+  top: 0;
+  background: darkslategrey;
+  cursor: ew-resize	;
+
+  &.border-left {
+    left: 0;
+  }
+
+  &.border-right {
+    right: 0;
+  }
+}
