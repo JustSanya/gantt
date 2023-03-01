@@ -1,13 +1,10 @@
 import { createSlice, createSelector } from '@reduxjs/toolkit';
+import { calculateDuration } from './utils';
 
 const initialState = {
   mode: 'days',
   tasks: [],
 };
-
-const calculateDuration = (start, end) => {
-  return Math.ceil(new Date(end) - new Date(start)) / (1000 * 60 * 60 * 24);
-}
 
 export const scheduleSlice = createSlice({
   name: 'schedule',
